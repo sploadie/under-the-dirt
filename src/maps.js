@@ -2,9 +2,9 @@ const levels = [
 	{
 		//EASY 1 : Stifle the flames
 		startBoard: [
-		'g', 'g', 'g',
+		'w', 'g', 'g',
 		'w', 'f', 'f',
-		'g', 'g', 'g',
+		'w', 'g', 'g',
 		],
 		solution: {
 			message: 'Spread the Water, build a River',
