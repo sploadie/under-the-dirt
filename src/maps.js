@@ -2,14 +2,12 @@ const levels = [
 	{
 		//EASY 1 : Stifle the flames
 		startBoard: [
-		'w', 'g', 'g', 'g', 'g',
-		'w', 'g', 'g', 'g', 'g',
-		'w', 'g', 'g', 'g', 'f',
-		'w', 'g', 'g', 'g', 'g',
-		'g', 'g', 'g', 'g', 'g',
+		'g', 'g', 'g',
+		'w', 'f', 'f',
+		'g', 'g', 'g',
 		],
 		solution: {
-			message: 'Stifle the flames...',
+			message: 'Spread the Water, build a River',
 			none: 'f'
 		}
 	},
@@ -23,10 +21,39 @@ const levels = [
 		'g', 'g', 'g', 'g', 'g',
 		],
 		solution: {
-			message: 'Return to cinders',
+			message: 'Spread the fire, build an Empire',
 			none: 'g'
 		}
 	},
+	{
+		//EASY 2 : Build a forest
+		startBoard: [
+		'w', 'w', 'w', 'w', 'w',
+		'f', 'w', 'w', 'w', 'w',
+		'g', 'g', 'g', 'g', 'f',
+		'f', 'w', 'w', 'w', 'w',
+		'w', 'w', 'w', 'w', 'w',
+		],
+		solution: {
+			message: 'Burn everything, then extinguish the fire',
+			all: 'w'
+		}
+	},
+	{
+		//EASY 2 : Build a forest
+		startBoard: [
+		'g', 'w', 'w', 'w', 'g',
+		'w', 'f', 'f', 'f', 'w',
+		'w', 'f', 'f', 'f', 'w',
+		'w', 'f', 'f', 'f', 'w',
+		'g', 'w', 'w', 'w', 'g',
+		],
+		solution: {
+			message: 'Plant trees on Water to make the Forest grow',
+			none: 'w'
+		}
+	},
+
 	{
 		//EASY 6 : Build the forest
 		startBoard: [
