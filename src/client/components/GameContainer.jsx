@@ -92,8 +92,9 @@ export default class GameContainer extends Component {
   }
 
   checkSolution(board) {
-    const { solution } = this.state
+    const { level, moves, solution } = this.state
     if (isSolved(board, solution)) {
+
       this.setState({ solved: true })
     }
   }

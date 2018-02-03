@@ -74,6 +74,10 @@ h1.ui.header.game-title {
 
 .menu-link-container {
   margin-top: 4%;
+
+  .ui.transparent.input input {
+    text-align: center;
+  }
 }
 
 h2.ui.header.menu-link {
