@@ -39,7 +39,13 @@ const Game = ({ board, onMove, disabled }) => {
   let pos = 0
   for (let x = 0; x < side; x += 1) {
     for (let y = 0; y < side; y += 1) {
-      tiles.push(<Tile key={`tile-${x}-${y}`} element={board[(y * side) + x]} size={size} x={(x + 1) * size} y={(y + 1) * size} />)
+      tiles.push(<Tile
+        key={`tile-${x}-${y}`}
+        element={board[(y * side) + x]}
+        size={size}
+        x={(x + 1) * size}
+        y={(y + 1) * size}
+      />)
     }
   }
 

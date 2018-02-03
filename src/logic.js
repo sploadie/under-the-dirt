@@ -14,7 +14,7 @@ function doMove(boardState, move) {
 		console.error(`Board has size ${boardState.length}??`)
 	}
 
-	if (move.pos > (4 * (gridSize - 1))) {
+	if (move.pos >= boardState.length) {
 		console.error("[UNKNOWN ACTION]");
 		return boardState;
 	}

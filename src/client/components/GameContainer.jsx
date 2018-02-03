@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
+import { Button, Icon } from 'semantic-ui-react'
 import { isArray, isPlainObject } from 'lodash'
 import util from 'util'
 
@@ -11,13 +12,26 @@ function bogusFetch() {
     startBoard: [
       'w','f','f',
       'f','f','f',
-      'f','f','f',
+      'f','f','g',
     ],
-    solution: [
-      'w','w','w',
-      'w','w','w',
-      'w','w','w',
-    ],
+    // startBoard: [
+    //   'w','f','f','f','f',
+    //   'f','f','f','f','f',
+    //   'f','f','f','f','f',
+    //   'f','f','f','f','f',
+    //   'f','f','f','f','g',
+    // ],
+    // solution: [
+    //   'w','w','w','w','w',
+    //   'w','w','w','w','w',
+    //   'w','w','w','w','w',
+    //   'w','w','w','w','w',
+    //   'w','w','w','w','w',
+    // ],
+    solution: {
+      message: "Drown everything...",
+      all: 'w'
+    }
   }))
 }
 
@@ -27,8 +41,10 @@ export default class GameContainer extends Component {
     this.state = {
       level: props.level || 1,
       loading: true,
+      solved: false,
     }
     this.fetchLevel = this.fetchLevel.bind(this)
+    this.resetBoard = this.resetBoard.bind(this)
     this.onMove = this.onMove.bind(this)
   }
 
@@ -38,6 +54,7 @@ export default class GameContainer extends Component {
       startBoard,
       board: startBoard.slice(),
       solution,
+      solved: false,
       loading: false,
     }))
   }
@@ -54,7 +71,12 @@ export default class GameContainer extends Component {
 
   onMove(move) {
     console.log(`Player chose move ${util.inspect(move, { depth: null })}!`)
+    const newBoard = logic(this.state.board, move)
     this.setState({ board: logic(this.state.board, move) })
+  }
+
+  resetBoard() {
+    this.setState({ board: this.state.startBoard.slice() })
   }
 
   render() {
@@ -71,6 +93,10 @@ export default class GameContainer extends Component {
       <div className="game-container">
         {isArray(solution) && <Game board={solution} disabled />}
         {isPlainObject(solution) && <h3>{solution.message}</h3>}
+        <Button icon labelPosition='left' onClick={this.resetBoard}>
+          <Icon name='repeat' />
+          Reset
+        </Button>
         {isArray(board) && <Game board={board} onMove={this.onMove} />}
       </div>
     )
