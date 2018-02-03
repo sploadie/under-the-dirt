@@ -13,7 +13,7 @@ export default class App extends Component {
       <Layout>
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route exact path="/game" component={GameContainer}/>
+          <Route exact path="/game/:username" component={GameContainer}/>
           <Route component={NoMatch}/>
         </Switch>
       </Layout>
