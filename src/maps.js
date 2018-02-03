@@ -137,6 +137,20 @@ const levels = [
 	{
 		//EASY 10 : Burn Everything
 		startBoard: [
+		'g', 'g', 'g', 'g', 'g',
+		'w', 'w', 'w', 'w', 'f',
+		'w', 'w', 'w', 'w', 'f',
+		'w', 'w', 'w', 'w', 'f',
+		'w', 'w', 'w', 'w', 'f',
+		],
+		solution: {
+			message: 'No water, no grass.',
+			all: 'f'}
+	},
+
+	{
+		//EASY 10 : Burn Everything
+		startBoard: [
 		'f', 'w', 'w', 'w', 'f',
 		'f', 'w', 'w', 'w', 'f',
 		'f', 'w', 'w', 'w', 'f',
@@ -144,22 +158,22 @@ const levels = [
 		'g', 'w', 'w', 'w', 'w',
 		],
 		solution: {
-			message: 'Fire only burns grass',
+			message: 'Red. Only red.',
 			all: 'f'}
 	},
 
 	{
 		//EASY 11 : Only trees
 		startBoard: [
-		'w', 'f', 'f', 'f', 'g',
-		'w', 'g', 'g', 'g', 'f',
 		'w', 'w', 'w', 'w', 'w',
-		'w', 'w', 'w', 'w', 'f',
-		'w', 'w', 'w', 'w', 'w',
+		'f', 'f', 'f', 'f', 'f',
+		'f', 'f', 'f', 'f', 'f',
+		'f', 'f', 'f', 'w', 'w',
+		'g', 'f', 'f', 'w', 'f',
 		],
 		solution: {
-			message: 'Save the Amazon Rainforest',
-			all: 'g'}
+			message: 'One fire to rule them all',
+			all: 'f'}
 	},
 	{
 		//EASY 12 : Inondation
@@ -171,7 +185,7 @@ const levels = [
 		'w', 'f', 'g', 'w', 'g',
 		],
 		solution: {
-			message: 'The flood plains bring great harvest',
+			message: 'Did you know our planet was called planet Blue?',
 			all: 'w'}
 	},
 	{
@@ -182,7 +196,7 @@ const levels = [
 		'f', 'f', 'g',
 		],
 		solution: {
-			message: 'Would you like a glass of water?',
+			message: 'An ocean of blue, please',
 			all: 'w'
 		}
 	},
@@ -196,7 +210,7 @@ const levels = [
 		'g', 'w', 'w', 'f', 'w',
 		],
 		solution: {
-			message: 'For the jungle',
+			message: 'The grass is always greener on the other side',
 			all: 'g'}
 	},
 	{
