@@ -252,6 +252,21 @@ const levels = [
 		'g', 'g', 'g',
 		],
 	},
+	{
+    //MAP HARDCORE 1
+    startBoard: [
+    'w', 'f', 'f', 'f', 'f','f',
+    'f', 'f', 'f', 'f', 'f','f',
+    'r', 'r', 'r', 'r', 'r','f',
+    'f', 'f', 'f', 'f', 'f','f',
+    'f', 'r', 'r', 'r', 'r','r',
+    'f', 'f', 'f', 'f', 'f','w',
+    ],
+    solution: {
+      message: 'Make way for the river',
+      none: 'f'
+    }
+  },
 ]
 
 export default levels

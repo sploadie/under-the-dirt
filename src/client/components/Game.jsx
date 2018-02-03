@@ -6,6 +6,7 @@ const elementImageUrl = {
   w: '/assets/images/water.gif',
   f: '/assets/images/fire.gif',
   g: '/assets/images/grass.gif',
+  r: '/assets/images/rock.gif',
 }
 
 const elementArrowImageUrl = {
