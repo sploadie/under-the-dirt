@@ -3,15 +3,15 @@ import { Image } from 'semantic-ui-react'
 import { map } from 'lodash'
 
 const elementImageUrl = {
-  w: '/assets/images/water.png',
-  f: '/assets/images/fire.png',
-  g: '/assets/images/grass.png',
+  w: '/assets/images/water.gif',
+  f: '/assets/images/fire.gif',
+  g: '/assets/images/grass.gif',
 }
 
 const elementArrowImageUrl = {
-  w: '/assets/images/water_arrow.png',
-  f: '/assets/images/fire_arrow.png',
-  g: '/assets/images/grass_arrow.png',
+  w: '/assets/images/big_water_arrow.png',
+  f: '/assets/images/big_fire_arrow.png',
+  g: '/assets/images/big_grass_arrow.png',
 }
 
 const eats = {
@@ -67,7 +67,7 @@ const Game = ({ board, solved, onMove, disabled }) => {
     console.error(`Board has size ${board.length}??`)
   }
 
-  const size = 48
+  const size = 64
 
   const tiles = []
   let pos = 0

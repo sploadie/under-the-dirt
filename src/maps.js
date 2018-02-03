@@ -252,19 +252,6 @@ const levels = [
 		'g', 'g', 'g',
 		],
 	},
-	{
-		//SPLOADIE 2
-		startBoard: [
-		'g', 'w', 'w',
-		'g', 'w', 'f',
-		'w', 'w', 'f',
-		],
-		solution: [
-		'g', 'g', 'g',
-		'g', 'f', 'g',
-		'g', 'g', 'g',
-		],
-	},
 ]
 
 export default levels

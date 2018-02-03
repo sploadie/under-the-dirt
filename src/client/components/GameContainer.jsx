@@ -27,29 +27,35 @@ function bogusFetch(level) {
 
 function Clue() {
   return (<div className="clue">
-    <Image src="/assets/images/water.png" />
-    <Image src="/assets/images/water_arrow.png" />
-    <Image src="/assets/images/fire.png" />
-    <Image src="/assets/images/fire_arrow.png" />
-    <Image src="/assets/images/grass.png" />
-    <Image src="/assets/images/grass_arrow.png" />
-    <Image src="/assets/images/water.png" />
+    <Image src="/assets/images/grass.gif" />
+    <Image src="/assets/images/big_grass_arrow.png" />
+    <Image src="/assets/images/water.gif" />
+    <Image src="/assets/images/big_water_arrow.png" />
+    <Image src="/assets/images/fire.gif" />
+    <Image src="/assets/images/big_fire_arrow.png" />
+    <Image src="/assets/images/grass.gif" />
   </div>)
 }
 
 function LevelDirectory({ level, fetchLevel }) {
-  const buttons = []
+  const buttonGroups = []
+  let buttons = []
 
   each(maps, (map, index) => {
-    if (index !== 0) { buttons.push(<Button.Or key={`or-${index}`} text=">" />) }
-    buttons.push(<Button key={`map-${index}`} disabled={level === index} content={`${index}`} onClick={() => fetchLevel(index)} />)
+    if (index !== 0 && (index - 1) % 10 !== 0 || index === 1) { buttons.push(<Button.Or key={`or-${index}`} text=">" />) }
+    buttons.push(<Button key={`map-${index}`} color={level === index ? 'green' : 'grey'} content={`${index}`} onClick={() => fetchLevel(index)} />)
+    if (index !== 0 && index % 10 === 0) {
+      buttonGroups.push(<Button.Group key={`${index}-group`}>{buttons}</Button.Group>)
+      buttons = []
+    }
   })
+  if (buttons.length !== 0) {
+    buttonGroups.push(<Button.Group key="last">{buttons}</Button.Group>)
+  }
 
   return (<div className="level-directory">
     <h2>Level Directory</h2>
-    <Button.Group>
-      {buttons}
-    </Button.Group>
+    {buttonGroups}
   </div>)
 }
 
@@ -76,7 +82,7 @@ export default class GameContainer extends Component {
       solution,
       board: startBoard.slice(),
       solved: false,
-      moves: [],
+      // moves: [],
       loading: false,
     })))
   }
@@ -118,7 +124,7 @@ export default class GameContainer extends Component {
   }
 
   resetBoard() {
-    this.setState({ board: this.state.startBoard.slice(), solved: false, moves: [] })
+    this.setState({ board: this.state.startBoard.slice(), solved: false })//, moves: [] })
   }
 
   render() {
@@ -142,16 +148,16 @@ export default class GameContainer extends Component {
           {isArray(board) && <Game board={board} solved={solved} onMove={this.onMove} />}
           {isArray(solution) && <Game board={solution} disabled />}
           {isPlainObject(solution) && <h1 style={{ color: 'yellow', marginTop: '0px' }}>{solution.message}</h1>}
-          {<h2>{moves.length} moves</h2>}
+          {<h2>{moves.length} move{moves.length !== 1 && 's'}</h2>}
           <Button icon labelPosition='left' onClick={this.resetBoard} style={{ opacity: solved ? 0.25 : 1 }}>
             <Icon name='repeat' />
             Reset
           </Button>
-          <h2 style={{ opacity: 0 }}>{solved ? 'Harmony has been achieved' : 'There is no harmony...'}</h2>
-          {solved && maps.length > level + 1 ? <Button size="massive" color="green" icon labelPosition='right' onClick={() => this.fetchLevel(level + 1)}>
+          {/* <h2 style={{ opacity: 0 }}>You can't see this</h2> */}
+          {solved && maps.length > level + 1 ? <Button style={{ marginTop: '10px' }} size="massive" color="green" icon labelPosition='right' onClick={() => this.fetchLevel(level + 1)}>
             Next Level
             <Icon name='arrow circle right' />
-          </Button> : <Button size="massive" disabled style={{ opacity: 0 }} content={maps.length > level + 1 ? 'Waiting for Harmony' : 'Final Harmony'} />}
+          </Button> : <h2 style={{ height: '72px', margin: '0px', opacity: maps.length > level + 1 ? 0 : 1 }}>No More Levels</h2>}
         </div>
         <Clue />
         <LevelDirectory level={level} fetchLevel={this.fetchLevel} />

@@ -43,6 +43,13 @@ img {
   position: absolute;
   bottom: 10px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .ui.buttons {
+    margin: 2px;
+  }
 }
 
 .game-board {
