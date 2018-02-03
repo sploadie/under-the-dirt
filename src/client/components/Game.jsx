@@ -14,6 +14,19 @@ const elementArrowImageUrl = {
   g: '/assets/images/grass_arrow.png',
 }
 
+const eats = {
+  w: 'f',
+  g: 'w',
+  f: 'g',
+}
+
+const directionIncrement = {
+  up: (pos, side) => pos - side,
+  down: (pos, side) => pos + side,
+  left: (pos, side) => pos - 1,
+  right: (pos, side) => pos + 1,
+}
+
 const Tile = ({ element, size, x, y }) => (
   <Image
     src={elementImageUrl[element]}
@@ -27,20 +40,26 @@ const Tile = ({ element, size, x, y }) => (
   />
 )
 
-const MoveButton = ({ onMove, element, size, pos, direction, x, y }) => (
-  <a onClick={() => onMove({ element, pos, direction })}>
-    <Image
-      src={elementArrowImageUrl[element]}
-      className={`move-button move-${direction} element-${element}`}
-      style={{
-        width: size,
-        height: size,
-        left: x,
-        top: y,
-      }}
-    />
-  </a>
-)
+const MoveButton = ({ onMove, board, element, side, size, pos, direction, x, y }) => {
+  console.log(element, eats[element], direction, pos, directionIncrement[direction](pos, side), board[directionIncrement[direction](pos, side)])
+  if (eats[element] !== board[directionIncrement[direction](pos, side)]) {
+    return null
+  }
+  return (
+    <a onClick={() => onMove({ element, pos, direction })}>
+      <Image
+        src={elementArrowImageUrl[element]}
+        className={`move-button move-${direction} element-${element}`}
+        style={{
+          width: size,
+          height: size,
+          left: x,
+          top: y,
+        }}
+      />
+    </a>
+  )
+}
 
 const Game = ({ board, onMove, disabled }) => {
   const side = Math.sqrt(board.length)
@@ -69,6 +88,8 @@ const Game = ({ board, onMove, disabled }) => {
       tiles.push(<MoveButton
         key={`move-${k}-down`}
         onMove={onMove}
+        board={board}
+        side={side}
         element={board[k]}
         size={size}
         pos={k}
@@ -79,6 +100,8 @@ const Game = ({ board, onMove, disabled }) => {
       tiles.push(<MoveButton
         key={`move-${k}-up`}
         onMove={onMove}
+        board={board}
+        side={side}
         element={board[k + ((side - 1) * side)]}
         size={size}
         pos={k + ((side - 1) * side)}
@@ -89,6 +112,8 @@ const Game = ({ board, onMove, disabled }) => {
       tiles.push(<MoveButton
         key={`move-${k}-right`}
         onMove={onMove}
+        board={board}
+        side={side}
         element={board[k * side]}
         size={size}
         pos={k * side}
@@ -99,6 +124,8 @@ const Game = ({ board, onMove, disabled }) => {
       tiles.push(<MoveButton
         key={`move-${k}-left`}
         onMove={onMove}
+        board={board}
+        side={side}
         element={board[(k * side) + side - 1]}
         size={size}
         pos={(k * side) + side - 1}
