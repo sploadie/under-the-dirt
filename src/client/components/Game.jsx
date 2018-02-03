@@ -66,22 +66,22 @@ const Game = ({ board, onMove, disabled }) => {
         y={(side + 1) * size}
       />)
       tiles.push(<MoveButton
-        key={`move-${k}-left`}
+        key={`move-${k}-right`}
         onMove={onMove}
         element={board[k * side]}
         size={size}
         pos={k * side}
-        direction="left"
+        direction="right"
         x={0}
         y={(k + 1) * size}
       />)
       tiles.push(<MoveButton
-        key={`move-${k}-right`}
+        key={`move-${k}-left`}
         onMove={onMove}
         element={board[(k * side) + side - 1]}
         size={size}
         pos={(k * side) + side - 1}
-        direction="right"
+        direction="left"
         x={(side + 1) * size}
         y={(k + 1) * size}
       />)

@@ -7,65 +7,51 @@ const directionIncrement = {
 	right: (pos, side) => pos + 1,
 }
 
-function doMove(boardSate, move) {
+function doMove(boardState, move) {
 
-	const gridSize = Math.sqrt(boardSate.length);
-
-	if (move.pos > (4 * (gridSize - 1))) {
-
-		console.log("[UNKNOWN ACTION]");
-
-		return boardSate;
-
+	const gridSize = Math.sqrt(boardState.length);
+	if (gridSize !== Math.floor(gridSize)) {
+		console.error(`Board has size ${boardState.length}??`)
 	}
 
-	const newBoard = boardSate.slice();
+	if (move.pos > (4 * (gridSize - 1))) {
+		console.error("[UNKNOWN ACTION]");
+		return boardState;
+	}
+
+	const newBoard = boardState.slice();
 	let pos = move.pos;
 
-	switch (move.element) {
-		case 'w':
-			for (let i = 1; i < gridSize; i++) {
-				pos = directionIncrement[move.direction](pos, gridSize);
-				if (newBoard[pos] != 'f') {
-					break;
-				}
-				newBoard[pos] = 'w';
-			}
+	const eats = {
+		w: 'f',
+		g: 'w',
+		f: 'g',
+	}
+
+	for (let i = 1; i < gridSize; i++) {
+		pos = directionIncrement[move.direction](pos, gridSize);
+		console.log('Pos:', pos);
+		if (newBoard[pos] != eats[move.element]) {
 			break;
-		case 'g':
-			for (let i = 1; i < gridSize; i++) {
-				pos = directionIncrement[move.direction](pos, gridSize);
-				if (newBoard[pos] != 'w') {
-					break;
-				}
-				newBoard[pos] = 'g';
-			}
-			break;
-		case 'f':
-			for (let i = 1; i < gridSize; i++) {
-				pos = directionIncrement[move.direction](pos, gridSize);
-				if (newBoard[pos] != 'g') {
-					break;
-				}
-				newBoard[pos] = 'f';
-			}
-			break;
+		}
+		newBoard[pos] = move.element;
 	}
 
 	return newBoard;
-
 }
 
-const boardSate = [
-	'w', 'w', 'w',
-	'w', 'w', 'g',
-	'w', 'f', 'f'
-];
+// const boardState = [
+// 	'w', 'w', 'w',
+// 	'w', 'w', 'g',
+// 	'w', 'f', 'f'
+// ];
+//
+// const move = {
+// 	element: 'w',
+// 	pos: 1,
+// 	direction: 'down'
+// }
+//
+// console.log(doMove(boardState, move))
 
-const move = {
-	element: 'w',
-	pos: 1,
-	direction: 'down'
-}
-
-console.log(doMove(boardSate, move));
+export default doMove
