@@ -1,4 +1,5 @@
 "use strict";
+import { isArray, isPlainObject, isEqual, findIndex } from 'lodash'
 
 const directionIncrement = {
   up: (pos, side) => pos - side,
@@ -39,4 +40,19 @@ function doMove(boardState, move) {
   return newBoard;
 }
 
-export default doMove
+function isSolved(board, solution) {
+  if (isArray(solution) && isEqual(board, solution)) {
+    return true
+  }
+  else if (isPlainObject(solution)) {
+    if (solution.all && findIndex(board, t => t !== solution.all) === -1) {
+      return true
+    }
+    if (solution.none && findIndex(board, t => t === solution.none) === -1) {
+      return true
+    }
+  }
+	return false
+}
+
+export default { doMove, isSolved }

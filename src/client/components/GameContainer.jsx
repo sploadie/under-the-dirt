@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 import { Button, Icon } from 'semantic-ui-react'
-import { isArray, isPlainObject, isEqual, findIndex, each } from 'lodash'
+import { isArray, isPlainObject, each } from 'lodash'
 import util from 'util'
 
 import Game from './Game.jsx'
 import logic from '../../logic.js'
+const { doMove, isSolved } = logic
 import maps from '../../maps.js'
 
 // {
@@ -82,7 +83,7 @@ export default class GameContainer extends Component {
     console.log(`Player chose move ${util.inspect(move, { depth: null })}!`)
 
     let solved = false
-    const newBoard = logic(this.state.board, move)
+    const newBoard = doMove(this.state.board, move)
 
     const moves = this.state.moves.slice()
     moves.push(move)
@@ -92,16 +93,8 @@ export default class GameContainer extends Component {
 
   checkSolution(board) {
     const { solution } = this.state
-    if (isArray(solution) && isEqual(board, solution)) {
+    if (isSolved(board, solution)) {
       this.setState({ solved: true })
-    }
-    else if (isPlainObject(solution)) {
-      if (solution.all && findIndex(board, t => t !== solution.all) === -1) {
-        this.setState({ solved: true })
-      }
-      if (solution.none && findIndex(board, t => t === solution.none) === -1) {
-        this.setState({ solved: true })
-      }
     }
   }
 
