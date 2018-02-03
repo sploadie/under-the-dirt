@@ -94,7 +94,13 @@ export default class GameContainer extends Component {
   checkSolution(board) {
     const { level, moves, solution } = this.state
     if (isSolved(board, solution)) {
-
+      fetch(`/scoreboard`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ level, moves, solution, username: this.props.match.username }),
+      })
       this.setState({ solved: true })
     }
   }
