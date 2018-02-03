@@ -6,33 +6,10 @@ import util from 'util'
 
 import Game from './Game.jsx'
 import logic from '../../logic.js'
+import maps from '../../maps.js'
 
 function bogusFetch() {
-  return new Promise(ok => ok({
-    startBoard: [
-      'w','f','f',
-      'f','f','f',
-      'f','f','g',
-    ],
-    // startBoard: [
-    //   'w','f','f','f','f',
-    //   'f','f','f','f','f',
-    //   'f','f','f','f','f',
-    //   'f','f','f','f','f',
-    //   'f','f','f','f','g',
-    // ],
-    // solution: [
-    //   'w','w','w','w','w',
-    //   'w','w','w','w','w',
-    //   'w','w','w','w','w',
-    //   'w','w','w','w','w',
-    //   'w','w','w','w','w',
-    // ],
-    solution: {
-      message: "Drown everything...",
-      all: 'w'
-    }
-  }))
+  return new Promise(ok => ok(maps[2]))
 }
 
 export default class GameContainer extends Component {
