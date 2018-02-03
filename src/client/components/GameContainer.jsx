@@ -132,11 +132,11 @@ export default class GameContainer extends Component {
           <Icon name='repeat' />
           Reset
         </Button>
-        <h2>{solved ? 'Harmony has been achieved' : 'There is no harmony...'}</h2>
-        {solved && maps.length > level + 1 ? <Button icon labelPosition='right' onClick={() => this.fetchLevel(level + 1)}>
+        <h2 style={{ opacity: 0 }}>{solved ? 'Harmony has been achieved' : 'There is no harmony...'}</h2>
+        {solved && maps.length > level + 1 ? <Button size="massive" color="green" icon labelPosition='right' onClick={() => this.fetchLevel(level + 1)}>
           Next Level
           <Icon name='arrow circle right' />
-        </Button> : <Button disabled style={{ opacity: 0 }} content={maps.length > level + 1 ? 'Waiting for Harmony' : 'Final Harmony'} />}
+        </Button> : <Button size="massive" disabled style={{ opacity: 0 }} content={maps.length > level + 1 ? 'Waiting for Harmony' : 'Final Harmony'} />}
         <LevelDirectory fetchLevel={this.fetchLevel} />
       </div>
     )
