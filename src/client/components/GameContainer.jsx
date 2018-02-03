@@ -125,19 +125,19 @@ export default class GameContainer extends Component {
 
     return (
       <div className="game-container">
-        <LevelDirectory fetchLevel={this.fetchLevel} />
+        {isArray(board) && <Game board={board} onMove={this.onMove} />}
+        {isArray(solution) && <Game board={solution} disabled />}
+        {isPlainObject(solution) && <h2>{solution.message}</h2>}
+        <Button icon labelPosition='left' onClick={this.resetBoard}>
+          <Icon name='repeat' />
+          Reset
+        </Button>
         <h2>{solved ? 'Harmony has been achieved' : 'There is no harmony...'}</h2>
         {solved && maps.length > level + 1 ? <Button icon labelPosition='right' onClick={() => this.fetchLevel(level + 1)}>
           Next Level
           <Icon name='arrow circle right' />
         </Button> : <Button disabled style={{ opacity: 0 }} content={maps.length > level + 1 ? 'Waiting for Harmony' : 'Final Harmony'} />}
-        {isArray(solution) && <Game board={solution} disabled />}
-        {isPlainObject(solution) && <h3>{solution.message}</h3>}
-        <Button icon labelPosition='left' onClick={this.resetBoard}>
-          <Icon name='repeat' />
-          Reset
-        </Button>
-        {isArray(board) && <Game board={board} onMove={this.onMove} />}
+        <LevelDirectory fetchLevel={this.fetchLevel} />
       </div>
     )
   }
