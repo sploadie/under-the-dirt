@@ -25,20 +25,7 @@ const levels = [
 			none: 'g'
 		}
 	},
-	{
-		//EASY 2 : Build a forest
-		startBoard: [
-		'w', 'w', 'w', 'w', 'w',
-		'f', 'w', 'w', 'w', 'w',
-		'g', 'g', 'g', 'g', 'f',
-		'f', 'w', 'w', 'w', 'w',
-		'w', 'w', 'w', 'w', 'w',
-		],
-		solution: {
-			message: 'Burn everything, then extinguish the fire',
-			all: 'w'
-		}
-	},
+
 	{
 		//EASY 2 : Build a forest
 		startBoard: [
@@ -53,7 +40,6 @@ const levels = [
 			none: 'w'
 		}
 	},
-
 	{
 		//EASY 6 : Build the forest
 		startBoard: [
@@ -62,36 +48,106 @@ const levels = [
 		'f', 'f', 'g',
 		],
 		solution: {
-			message: 'Mother Nature',
+			message: 'Stifle the flames, harvest a forest',
 			all: 'g'
 		}
 	},
 	{
+		//EASY 2 : Build a forest
+		startBoard: [
+		'f', 'f', 'f', 'f', 'f',
+		'g', 'g', 'g', 'g', 'f',
+		'g', 'g', 'g', 'g', 'f',
+		'g', 'g', 'g', 'g', 'f',
+		'f', 'f', 'g', 'f', 'f',
+		],
+		solution: {
+			message: 'Burn everything',
+			all: 'f'
+		}
+	},
+	{
+		//EASY 2 : Build a forest
+		startBoard: [
+		'g', 'g', 'g', 'g', 'g',
+		'w', 'w', 'w', 'w', 'g',
+		'w', 'w', 'w', 'w', 'w',
+		'w', 'w', 'w', 'w', 'g',
+		'g', 'g', 'g', 'g', 'g',
+		],
+		solution: {
+			message: 'Plant grass everywhere',
+			all: 'g'
+		}
+	},
+
+
+	{
 		//EASY 9 : Inondation
 		startBoard: [
 		'w', 'w', 'w', 'w', 'w',
-		'w', 'g', 'g', 'g', 'g',
-		'f', 'g', 'g', 'g', 'g',
-		'w', 'g', 'g', 'g', 'g',
+		'w', 'f', 'f', 'f', 'g',
+		'f', 'f', 'f', 'f', 'g',
+		'w', 'f', 'f', 'f', 'g',
 		'w', 'f', 'f', 'f', 'f',
 		],
 		solution: {
-			message: 'Tsunami',
+			message: 'Drown everything, even the lonely fire',
 			all: 'w'}
+	},
+	{
+		//EASY 9 : Inondation
+		startBoard: [
+		'f', 'f', 'g', 'f', 'f',
+		'g', 'w', 'w', 'w', 'f',
+		'g', 'w', 'w', 'w', 'f',
+		'g', 'w', 'w', 'w', 'f',
+		'g', 'w', 'w', 'w', 'f',
+		],
+		solution: {
+			message: 'And you set fire... to the rain',
+			all: 'f'}
 	},
 	{
 		//EASY 10 : Burn Everything
 		startBoard: [
-		'f', 'w', 'w', 'w', 'f',
 		'f', 'f', 'f', 'f', 'f',
-		'f', 'f', 'f', 'f', 'f',
-		'f', 'f', 'f', 'f', 'f',
-		'g', 'w', 'w', 'w', 'w',
+		'f', 'g', 'g', 'g', 'f',
+		'f', 'g', 'g', 'g', 'f',
+		'f', 'g', 'g', 'g', 'f',
+		'w', 'g', 'g', 'g', 'g',
+		],
+		solution: {
+			message: 'More green please. More than that.',
+			all: 'g'}
+	},
+	{
+		//EASY 10 : Burn Everything
+		startBoard: [
+		'f', 'g', 'g', 'g', 'g',
+		'f', 'g', 'g', 'g', 'g',
+		'f', 'g', 'g', 'g', 'g',
+		'f', 'g', 'g', 'g', 'g',
+		'g', 'g', 'g', 'g', 'g',
 		],
 		solution: {
 			message: 'Some people just want to watch the world burn',
 			all: 'f'}
 	},
+	{
+		//EASY 10 : Burn Everything
+		startBoard: [
+		'f', 'w', 'w', 'w', 'f',
+		'f', 'w', 'w', 'w', 'f',
+		'f', 'w', 'w', 'w', 'f',
+		'f', 'w', 'w', 'w', 'f',
+		'g', 'w', 'w', 'w', 'w',
+		],
+		solution: {
+			message: 'Fire only burns grass',
+			all: 'f'}
+	},
+
 	{
 		//EASY 11 : Only trees
 		startBoard: [
