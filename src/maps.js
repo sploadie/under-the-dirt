@@ -9,7 +9,7 @@ const levels = [
 		'g', 'g', 'g', 'g', 'g',
 		],
 		solution: {
-			message: 'Can you stop it?',
+			message: 'Stifle the flames...',
 			none: 'f'
 		}
 	},
@@ -23,7 +23,7 @@ const levels = [
 		'g', 'g', 'g', 'g', 'g',
 		],
 		solution: {
-			message: 'What could go wrong?',
+			message: 'Return to cinders',
 			none: 'g'
 		}
 	},
@@ -35,7 +35,7 @@ const levels = [
 		'f', 'f', 'g',
 		],
 		solution: {
-			message: 'Mother nature',
+			message: 'Mother Nature',
 			all: 'g'
 		}
 	},
@@ -75,7 +75,7 @@ const levels = [
 		'w', 'w', 'w', 'w', 'w',
 		],
 		solution: {
-			message: 'Save the amazon forest',
+			message: 'Save the Amazon Rainforest',
 			all: 'g'}
 	},
 	{
@@ -88,7 +88,7 @@ const levels = [
 		'w', 'f', 'g', 'w', 'g',
 		],
 		solution: {
-			message: 'Join the rivers they said',
+			message: 'The flood plains bring great harvest',
 			all: 'w'}
 	},
 	{
@@ -99,7 +99,7 @@ const levels = [
 		'f', 'f', 'g',
 		],
 		solution: {
-			message: 'Would you like a glass of water',
+			message: 'Would you like a glass of water?',
 			all: 'w'
 		}
 	},

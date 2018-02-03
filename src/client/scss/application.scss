@@ -42,7 +42,7 @@ body {
 
   .move-button {
     position: absolute;
-    border-radius: 50%;
+    cursor: pointer;
 
     a {
       display: block;
@@ -50,19 +50,16 @@ body {
       height: 100%;
     }
 
-    &.move-up {}
-    &.move-down {}
-    &.move-left {}
-    &.move-right {}
-
-    &.element-w {
-      background-color: blue;
+    &.move-up {
+      transform: rotate(270deg);
     }
-    &.element-f {
-      background-color: red;
+    &.move-down {
+      transform: rotate(90deg);
     }
-    &.element-g {
-      background-color: green;
+    &.move-left {
+      transform: rotate(180deg);
+    }
+    &.move-right {
     }
   }
 }

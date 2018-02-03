@@ -29,8 +29,8 @@ function LevelDirectory({ fetchLevel }) {
   const buttons = []
 
   each(maps, (map, index) => {
-    if (index !== 0) { buttons.push(<Button.Or text=">" />) }
-    buttons.push(<Button content={`${index}`} onClick={() => fetchLevel(index)} />)
+    if (index !== 0) { buttons.push(<Button.Or key={`or-${index}`} text=">" />) }
+    buttons.push(<Button key={`map-${index}`} content={`${index}`} onClick={() => fetchLevel(index)} />)
   })
 
   return (<div className="level-directory">

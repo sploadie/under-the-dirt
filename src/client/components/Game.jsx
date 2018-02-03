@@ -8,6 +8,12 @@ const elementImageUrl = {
   g: '/assets/images/grass.png',
 }
 
+const elementArrowImageUrl = {
+  w: '/assets/images/water_arrow.png',
+  f: '/assets/images/fire_arrow.png',
+  g: '/assets/images/grass_arrow.png',
+}
+
 const Tile = ({ element, size, x, y }) => (
   <Image
     src={elementImageUrl[element]}
@@ -24,7 +30,7 @@ const Tile = ({ element, size, x, y }) => (
 const MoveButton = ({ onMove, element, size, pos, direction, x, y }) => (
   <a onClick={() => onMove({ element, pos, direction })}>
     <Image
-      src={elementImageUrl[element]}
+      src={elementArrowImageUrl[element]}
       className={`move-button move-${direction} element-${element}`}
       style={{
         width: size,
