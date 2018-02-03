@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 import { Button, Icon } from 'semantic-ui-react'
-import { isArray, isPlainObject, isEqual, findIndex } from 'lodash'
+import { isArray, isPlainObject, isEqual, findIndex, each } from 'lodash'
 import util from 'util'
 
 import Game from './Game.jsx'
@@ -24,10 +24,21 @@ function bogusFetch(level) {
   return new Promise(ok => ok(maps[level]))
 }
 
-// <h2>Level Directory</h2>
-// <Button.Group>
-//   {map(maps, (map, index) => <Button />)}
-// </Button.Group>
+function LevelDirectory({ fetchLevel }) {
+  const buttons = []
+
+  each(maps, (map, index) => {
+    if (index !== 0) { buttons.push(<Button.Or text=">" />) }
+    buttons.push(<Button content={`${index}`} onClick={() => fetchLevel(index)} />)
+  })
+
+  return (<div className="level-directory">
+    <h2>Level Directory</h2>
+    <Button.Group>
+      {buttons}
+    </Button.Group>
+  </div>)
+}
 
 export default class GameContainer extends Component {
   constructor(props) {
