@@ -3,3 +3,57 @@ body {
   color: #005CC5;
   text-align: center;
 }
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-board {
+  position: relative;
+  margin: 10px;
+  background-color: yellow;
+
+  .element {
+    position: absolute;
+    background-color: black;
+
+    &.element-w {
+      background-color: blue;
+    }
+    &.element-f {
+      background-color: red;
+    }
+    &.element-g {
+      background-color: green;
+    }
+  }
+
+  .move-button {
+    position: absolute;
+    border-radius: 50%;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &.move-up {}
+    &.move-down {}
+    &.move-left {}
+    &.move-right {}
+
+    &.element-w {
+      background-color: blue;
+    }
+    &.element-f {
+      background-color: red;
+    }
+    &.element-g {
+      background-color: green;
+    }
+  }
+}

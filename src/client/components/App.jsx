@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import Home from './Home.jsx'
 import NoMatch from './NoMatch.jsx'
 import Layout from './Layout.jsx'
+import GameContainer from './GameContainer.jsx'
 
 export default class App extends Component {
   render() {
@@ -12,6 +13,7 @@ export default class App extends Component {
       <Layout>
         <Switch>
           <Route exact path="/" component={Home}/>
+          <Route exact path="/game" component={GameContainer}/>
           <Route component={NoMatch}/>
         </Switch>
       </Layout>
