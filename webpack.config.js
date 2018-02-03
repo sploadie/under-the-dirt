@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, './build');
+var BUILD_DIR = path.resolve(__dirname, './public/build');
 var APP_DIR = path.resolve(__dirname, './src/client');
 
 const config = {
@@ -40,7 +40,13 @@ const config = {
      },
      {
        test: /\.(png|jpg|gif)$/,
-       use: ['file-loader'],
+       use: {
+         loader: 'file-loader',
+         options: {
+           name: '[name].[ext]',
+           publicPath: 'assets/'
+        }
+      },
      }
     ],
 

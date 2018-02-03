@@ -1,8 +1,16 @@
 import React from 'react';
+import { Image } from 'semantic-ui-react'
 import { map } from 'lodash'
 
+const elementImageUrl = {
+  w: '/assets/images/water.png',
+  f: '/assets/images/fire.png',
+  g: '/assets/images/grass.png',
+}
+
 const Tile = ({ element, size, x, y }) => (
-  <div
+  <Image
+    src={elementImageUrl[element]}
     className={`element element-${element}`}
     style={{
       width: size,
@@ -14,17 +22,18 @@ const Tile = ({ element, size, x, y }) => (
 )
 
 const MoveButton = ({ onMove, element, size, pos, direction, x, y }) => (
-  <div
-    className={`move-button move-${direction} element-${element}`}
-    style={{
-      width: size,
-      height: size,
-      left: x,
-      top: y,
-    }}
-  >
-    <a onClick={() => onMove({ element, pos, direction })}/>
-  </div>
+  <a onClick={() => onMove({ element, pos, direction })}>
+    <Image
+      src={elementImageUrl[element]}
+      className={`move-button move-${direction} element-${element}`}
+      style={{
+        width: size,
+        height: size,
+        left: x,
+        top: y,
+      }}
+    />
+  </a>
 )
 
 const Game = ({ board, onMove, disabled }) => {
