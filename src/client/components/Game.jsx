@@ -61,7 +61,7 @@ const MoveButton = ({ onMove, board, element, side, size, pos, direction, x, y }
   )
 }
 
-const Game = ({ board, onMove, disabled }) => {
+const Game = ({ board, solved, onMove, disabled }) => {
   const side = Math.sqrt(board.length)
   if (side !== Math.floor(side)) {
     console.error(`Board has size ${board.length}??`)
@@ -83,7 +83,7 @@ const Game = ({ board, onMove, disabled }) => {
     }
   }
 
-  if (!disabled) {
+  if (!disabled && !solved) {
     for (let k = 0; k < side; k += 1) {
       tiles.push(<MoveButton
         key={`move-${k}-down`}
@@ -137,7 +137,7 @@ const Game = ({ board, onMove, disabled }) => {
   }
 
   return (
-    <div className="game-board" style={{ width: (side + 2) * size, height: (side + 2) * size }}>
+    <div className={`game-board ${disabled ? 'disabled' : 'enabled'}`} style={{ width: (side + 2) * size, height: (side + 2) * size }}>
       {tiles}
     </div>
   )

@@ -5,19 +5,38 @@ body {
   text-align: center;
 }
 
+img {
+  user-select: none;
+}
+
 .main-container {
   width: 100%;
   height: 100%;
   // background-color: rgba(0,0,0,0.5);
+  user-select: none;
 }
 
 .game-container {
   width: 100%;
   height: 100%;
+
+  .center-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.clue {
+  position: absolute;
+  top: 10px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center
 }
 
 .level-directory {
@@ -30,6 +49,11 @@ body {
   position: relative;
   margin: 10px;
   // background-color: yellow;
+
+  &.disabled {
+    z-index: -100;
+    margin: -42px;
+  }
 
   .element {
     position: absolute;
