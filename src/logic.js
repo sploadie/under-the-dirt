@@ -48,7 +48,7 @@ function isSolved(board, solution) {
     if (solution.all && findIndex(board, t => t !== solution.all && t !== 'r') === -1) {
       return true
     }
-    if (solution.none && findIndex(board, t => t === solution.none) === -1) {
+    else if (solution.none && findIndex(board, t => t === solution.none) === -1) {
       return true
     }
   }

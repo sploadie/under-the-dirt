@@ -22,9 +22,6 @@ export default class Home extends Component {
           <Header className="menu-link" as='h2' textAlign='center'>
             <Link to="/scoreboard">Scoreboard</Link>
           </Header>
-          <Header className="menu-link" as='h2' textAlign='center'>
-            <Link to="/credits">Credits</Link>
-          </Header>
         </div>
       </div>
     )
