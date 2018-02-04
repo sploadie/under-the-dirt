@@ -4,6 +4,8 @@
   "description": "Red Bull Mind Gamers Prototype",
   "main": "app.js",
   "scripts": {
+    "first": "npm run webpack",
+    "second": "npm start",
     "start": "nodemon src/server/index.js",
     "webpack": "./node_modules/.bin/webpack -w",
     "test": "mocha --compilers babel-core/register ./test/*test.js"
