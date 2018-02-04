@@ -1,8 +1,13 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
+const fs = require('fs')
 
-const scoreboard = []
+let scoreboard = []
+fs.readFile('./scoreboard.json', (err, data) => {
+  console.log(JSON.parse(data));
+  scoreboard = JSON.parse(data)
+});
 
 app.use(express.static(__dirname +'./../../public/')); //serves the index.html
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,6 +19,7 @@ app.post('/scoreboard', (req, res) => {
     scoreboard[req.body.level].push({ name: req.body.name, score: req.body.moves.length })
   }
   console.log(scoreboard)
+  fs.writeFile('./scoreboard.json', JSON.stringify(scoreboard), 'utf8')
   res.send(JSON.stringify(scoreboard))
 });
 
