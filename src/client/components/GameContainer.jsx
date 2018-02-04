@@ -147,7 +147,7 @@ export default class GameContainer extends Component {
         <Clue />
         <div className="center-container">
           {isArray(board) && <Game board={board} solved={solved} onMove={this.onMove} />}
-          {isArray(solution) && <Game board={solution} disabled />}
+          {isArray(solution.board) && <Game board={solution.board} disabled />}
           {solved && maps.length > level + 1 ? <Button style={{ marginBottom: '15px' }} size="massive" color="green" icon labelPosition='right' onClick={() => this.fetchLevel(level + 1)}>
             Next Level
             <Icon name='arrow circle right' />

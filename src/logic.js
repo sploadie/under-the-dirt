@@ -41,7 +41,7 @@ function doMove(boardState, move) {
 }
 
 function isSolved(board, solution) {
-  if (isArray(solution) && isEqual(board, solution)) {
+  if (isArray(solution.board) && isEqual(board, solution.board)) {
     return true
   }
   else if (isPlainObject(solution)) {
