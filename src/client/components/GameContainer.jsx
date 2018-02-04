@@ -153,7 +153,7 @@ export default class GameContainer extends Component {
             <Icon name='arrow circle right' />
           </Button> : <h2 style={{ height: '72px', margin: '0px', opacity: maps.length > level + 1 ? 0 : 1 }}>No More Levels</h2>}
           {isPlainObject(solution) && <h1 style={{ color: 'yellow', marginTop: '0px', marginBottom: '0px' }}>{solution.message}</h1>}
-          {<h2>{moves.length} move{moves.length !== 1 && 's'}</h2>}
+          {<h2>{moves.length}{solution.min_move && `/${solution.min_move}`} move{moves.length !== 1 && 's'}</h2>}
           <Button icon labelPosition='left' onClick={this.resetBoard} style={{ opacity: solved ? 0.25 : 1 }}>
             <Icon name='repeat' />
             Reset

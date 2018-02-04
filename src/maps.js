@@ -300,13 +300,7 @@ const levels = [
 		'f', 'w', 'g', 'g','g',
 		],
 		solution: {
-			board: [
-			'f', 'f', 'r', 'r','r',
-			'f', 'f', 'f', 'f','f',
-			'f', 'f', 'r', 'r','r',
-			'f', 'f', 'f', 'f','f',
-			'f', 'f', 'f', 'f','f',
-			],
+			all: 'f',
 			min_move: 11,
 			message: 'Burn everything besides rocks'
 		},
@@ -322,14 +316,7 @@ const levels = [
 		'w', 'f', 'f', 'f', 'f','f',
 		],
 		solution: {
-			board: [
-			'f', 'f', 'f', 'f', 'f','f',
-			'f', 'f', 'f', 'f', 'f','f',
-			'f', 'f', 'r', 'r', 'r','f',
-			'f', 'f', 'r', 'f', 'r','f',
-			'f', 'f', 'f', 'f', 'r','f',
-			'f', 'f', 'f', 'f', 'f','f',
-			],
+			all: 'f',
 			message: 'Make everything burn',
 			min_move: 14
 		}
