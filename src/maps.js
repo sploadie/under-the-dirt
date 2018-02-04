@@ -253,20 +253,86 @@ const levels = [
 		],
 	},
 	{
-    //MAP HARDCORE 1
-    startBoard: [
-    'w', 'f', 'f', 'f', 'f','f',
-    'f', 'f', 'f', 'f', 'f','f',
-    'r', 'r', 'r', 'r', 'r','f',
-    'f', 'f', 'f', 'f', 'f','f',
-    'f', 'r', 'r', 'r', 'r','r',
-    'f', 'f', 'f', 'f', 'f','w',
-    ],
-    solution: {
-      message: 'Make way for the river',
-      none: 'f'
-    }
-  },
+		//MAP HARDCORE 1
+		startBoard: [
+		'w', 'f', 'f', 'f', 'f','f',
+		'f', 'f', 'f', 'f', 'f','f',
+		'r', 'r', 'r', 'r', 'r','f',
+		'f', 'f', 'f', 'f', 'f','f',
+		'f', 'r', 'r', 'r', 'r','r',
+		'f', 'f', 'f', 'f', 'f','w',
+		],
+		solution: {
+			message: 'Make way for the river',
+			none: 'f'
+		}
+	},
+	{
+		//MAP HARDCORE 3
+		startBoard: [
+		'g', 'g', 'r', 'r','r',
+		'f', 'w', 'g', 'g','w',
+		'w', 'w', 'r', 'r','r',
+		'w', 'w', 'g', 'g','g',
+		'f', 'w', 'g', 'g','g',
+		],
+		solution: [
+		'f', 'f', 'r', 'r','r',
+		'f', 'f', 'f', 'f','f',
+		'f', 'f', 'r', 'r','r',
+		'f', 'f', 'f', 'f','f',
+		'f', 'f', 'f', 'f','f',
+		],
+	},
+	{
+		//MAP HARDCORE 4
+		startBoard: [
+		'g', 'g', 'g', 'g', 'g','g',
+		'f', 'g', 'g', 'g', 'g','g',
+		'f', 'g', 'r', 'r', 'r','g',
+		'f', 'g', 'r', 'w', 'r','g',
+		'f', 'g', 'g', 'f', 'r','g',
+		'w', 'f', 'f', 'f', 'f','f',
+		],
+		solution: [
+		'f', 'f', 'f', 'f', 'f','f',
+		'f', 'f', 'f', 'f', 'f','f',
+		'f', 'f', 'r', 'r', 'r','f',
+		'f', 'f', 'r', 'f', 'r','f',
+		'f', 'f', 'f', 'f', 'r','f',
+		'f', 'f', 'f', 'f', 'f','f',
+		]
+	},
+	{
+		//MAP HARDCORE 5
+		startBoard: [
+		'w', 'r', 'r', 'r', 'r','r',
+		'w', 'w', 'w', 'w', 'w','g',
+		'f', 'r', 'r', 'r', 'r','g',
+		'f', 'f', 'f', 'f', 'r','g',
+		'r', 'r', 'r', 'r', 'r','g',
+		'w', 'g', 'g', 'g', 'g','f',
+		],
+		solution: {
+			message: 'Extinguish all fire. Yes. Even this one.',
+			none: 'f'
+		},
+	},
+	{
+		//MAP HARDCORE 5
+		startBoard: [
+		'r', 'w', 'r', 'g', 'f','r',
+		'w', 'r', 'g', 'f', 'w','g',
+		'r', 'g', 'f', 'w', 'r','g',
+		'g', 'f', 'w', 'f', 'r','g',
+		'f', 'w', 'r', 'r', 'r','g',
+		'w', 'r', 'g', 'g', 'g','r',
+		],
+		solution: {
+			message: 'Extinguish all fire. Yes. Even this one.',
+			none: 'f'
+		},
+	},
 ]
 
 export default levels
