@@ -22,7 +22,7 @@ img {
 
   .center-container {
     width: 100%;
-    height: 100%;
+    height: 75%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,8 +31,7 @@ img {
 }
 
 .clue {
-  position: absolute;
-  top: 10px;
+  padding-top: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -40,8 +39,6 @@ img {
 }
 
 .level-directory {
-  position: absolute;
-  bottom: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;

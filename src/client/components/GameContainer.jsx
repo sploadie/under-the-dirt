@@ -144,6 +144,7 @@ export default class GameContainer extends Component {
 
     return (
       <div className="game-container">
+        <Clue />
         <div className="center-container">
           {isArray(board) && <Game board={board} solved={solved} onMove={this.onMove} />}
           {isArray(solution) && <Game board={solution} disabled />}
@@ -159,7 +160,6 @@ export default class GameContainer extends Component {
           </Button>
           {/* <h2 style={{ opacity: 0 }}>You can't see this</h2> */}
         </div>
-        <Clue />
         <LevelDirectory level={level} fetchLevel={this.fetchLevel} />
       </div>
     )
