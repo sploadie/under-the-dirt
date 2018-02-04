@@ -7,7 +7,8 @@ const levels = [
 		'w', 'g', 'g',
 		],
 		solution: {
-			message: 'Spread the Water, build a River',
+			message: 'Click on the Arrows to play',
+			min_move: 1,
 			none: 'f'
 		}
 	},
@@ -22,6 +23,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Spread the fire, build an Empire',
+			min_move: 5,
 			none: 'g'
 		}
 	},
@@ -37,6 +39,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Plant trees on Water to make the Forest grow',
+			min_move: 4,
 			none: 'w'
 		}
 	},
@@ -49,6 +52,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Stifle the flames, harvest a forest',
+			min_move: 8,
 			all: 'g'
 		}
 	},
@@ -63,6 +67,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Burn everything',
+			min_move: 4,
 			all: 'f'
 		}
 	},
@@ -77,6 +82,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Plant grass everywhere',
+			min_move: 4,
 			all: 'g'
 		}
 	},
@@ -93,6 +99,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Drown everything, even the lonely fire',
+			min_move: -1,
 			all: 'w'}
 	},
 	{
@@ -106,6 +113,7 @@ const levels = [
 		],
 		solution: {
 			message: 'And you set fire... to the rain',
+			min_move: 9,
 			all: 'f'}
 	},
 	{
@@ -119,6 +127,7 @@ const levels = [
 		],
 		solution: {
 			message: 'More green please. More than that.',
+			min_move: 6,
 			all: 'g'}
 	},
 	{
@@ -132,6 +141,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Some people just want to watch the world burn',
+			min_move: 6,
 			all: 'f'}
 	},
 	{
@@ -145,6 +155,7 @@ const levels = [
 		],
 		solution: {
 			message: 'No water, no grass.',
+			min_move: 11,
 			all: 'f'}
 	},
 
@@ -159,6 +170,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Red. Only red.',
+			min_move: 13,
 			all: 'f'}
 	},
 
@@ -173,6 +185,7 @@ const levels = [
 		],
 		solution: {
 			message: 'One fire to rule them all',
+			min_move: 18,
 			all: 'f'}
 	},
 	{
@@ -186,6 +199,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Did you know our planet was called planet Blue?',
+			min_move: 13,
 			all: 'w'}
 	},
 	{
@@ -197,6 +211,7 @@ const levels = [
 		],
 		solution: {
 			message: 'An ocean of blue, please',
+			min_move: 7,
 			all: 'w'
 		}
 	},
@@ -211,6 +226,7 @@ const levels = [
 		],
 		solution: {
 			message: 'The grass is always greener on the other side',
+			min_move: 13,
 			all: 'g'}
 	},
 	{
@@ -224,6 +240,7 @@ const levels = [
 		],
 		solution: {
 			message: 'What could go green ?',
+			min_move: 17,
 			all: 'g'}
 	},
 
@@ -236,6 +253,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Fire, fire everywhere',
+			min_move: 11,
 			all: 'f'
 		}
 	},
@@ -246,11 +264,15 @@ const levels = [
 		'g', 'w', 'f',
 		'w', 'w', 'f',
 		],
-		solution: [
-		'g', 'g', 'g',
-		'g', 'f', 'g',
-		'g', 'g', 'g',
-		],
+		solution: {
+			board: [
+			'g', 'g', 'g',
+			'g', 'f', 'g',
+			'g', 'g', 'g',
+			],
+			message: 'Reproduce the lower map',
+			min_move: 8
+		},
 	},
 	{
 		//MAP HARDCORE 1
@@ -264,6 +286,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Make way for the river',
+			min_move: 6,
 			none: 'f'
 		}
 	},
@@ -276,13 +299,17 @@ const levels = [
 		'w', 'w', 'g', 'g','g',
 		'f', 'w', 'g', 'g','g',
 		],
-		solution: [
-		'f', 'f', 'r', 'r','r',
-		'f', 'f', 'f', 'f','f',
-		'f', 'f', 'r', 'r','r',
-		'f', 'f', 'f', 'f','f',
-		'f', 'f', 'f', 'f','f',
-		],
+		solution: {
+			board: [
+			'f', 'f', 'r', 'r','r',
+			'f', 'f', 'f', 'f','f',
+			'f', 'f', 'r', 'r','r',
+			'f', 'f', 'f', 'f','f',
+			'f', 'f', 'f', 'f','f',
+			],
+			min_move: 11,
+			message: 'Burn everything besides rocks'
+		},
 	},
 	{
 		//MAP HARDCORE 4
@@ -294,14 +321,18 @@ const levels = [
 		'f', 'g', 'g', 'f', 'r','g',
 		'w', 'f', 'f', 'f', 'f','f',
 		],
-		solution: [
-		'f', 'f', 'f', 'f', 'f','f',
-		'f', 'f', 'f', 'f', 'f','f',
-		'f', 'f', 'r', 'r', 'r','f',
-		'f', 'f', 'r', 'f', 'r','f',
-		'f', 'f', 'f', 'f', 'r','f',
-		'f', 'f', 'f', 'f', 'f','f',
-		]
+		solution: {
+			board: [
+			'f', 'f', 'f', 'f', 'f','f',
+			'f', 'f', 'f', 'f', 'f','f',
+			'f', 'f', 'r', 'r', 'r','f',
+			'f', 'f', 'r', 'f', 'r','f',
+			'f', 'f', 'f', 'f', 'r','f',
+			'f', 'f', 'f', 'f', 'f','f',
+			],
+			message: 'Make everything burn',
+			min_move: 14
+		}
 	},
 	{
 		//MAP HARDCORE 5
@@ -315,24 +346,11 @@ const levels = [
 		],
 		solution: {
 			message: 'Extinguish all fire. Yes. Even this one.',
+			min_move: 9,
 			none: 'f'
 		},
 	},
-	{
-		//MAP HARDCORE 5
-		startBoard: [
-		'r', 'w', 'r', 'g', 'f','r',
-		'w', 'r', 'g', 'f', 'w','g',
-		'r', 'g', 'f', 'w', 'r','g',
-		'g', 'f', 'w', 'f', 'r','g',
-		'f', 'w', 'r', 'r', 'r','g',
-		'w', 'r', 'g', 'g', 'g','r',
-		],
-		solution: {
-			message: 'Extinguish all fire. Yes. Even this one.',
-			none: 'f'
-		},
-	},
+
 ]
 
 export default levels
