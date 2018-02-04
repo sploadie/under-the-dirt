@@ -145,22 +145,22 @@ export default class GameContainer extends Component {
 
     return (
       <div className="game-container">
+        <Clue />
         <div className="center-container">
           {isArray(board) && <Game board={board} solved={solved} onMove={this.onMove} />}
-          {isArray(solution) && <Game board={solution} disabled />}
+          {isArray(solution.board) && <Game board={solution.board} disabled />}
           {solved && maps.length > level + 1 ? <Button style={{ marginBottom: '15px' }} size="massive" color="green" icon labelPosition='right' onClick={() => this.fetchLevel(level + 1)}>
             Next Level
             <Icon name='arrow circle right' />
           </Button> : <h2 style={{ height: '72px', margin: '0px', opacity: maps.length > level + 1 ? 0 : 1 }}>No More Levels</h2>}
           {isPlainObject(solution) && <h1 style={{ color: 'yellow', marginTop: '0px', marginBottom: '0px' }}>{solution.message}</h1>}
-          {<h2>{moves.length} move{moves.length !== 1 && 's'}</h2>}
+          {<h2>{moves.length}{solution.min_move && `/${solution.min_move}`} move{moves.length !== 1 && 's'}</h2>}
           <Button icon labelPosition='left' onClick={this.resetBoard} style={{ opacity: solved ? 0.25 : 1 }}>
             <Icon name='repeat' />
             Reset
           </Button>
           {/* <h2 style={{ opacity: 0 }}>You can't see this</h2> */}
         </div>
-        <Clue />
         <LevelDirectory level={level} fetchLevel={this.fetchLevel} />
       </div>
     )
