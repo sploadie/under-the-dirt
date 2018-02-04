@@ -99,7 +99,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Drown everything, even the lonely fire',
-			min_move: -1,
+			min_move: 6,
 			all: 'w'}
 	},
 	{
@@ -155,7 +155,7 @@ const levels = [
 		],
 		solution: {
 			message: 'No water, no grass.',
-			min_move: 11,
+			min_move: 10,
 			all: 'f'}
 	},
 
@@ -170,7 +170,7 @@ const levels = [
 		],
 		solution: {
 			message: 'Red. Only red.',
-			min_move: 13,
+			min_move: 12,
 			all: 'f'}
 	},
 
@@ -185,7 +185,7 @@ const levels = [
 		],
 		solution: {
 			message: 'One fire to rule them all',
-			min_move: 18,
+			min_move: 17,
 			all: 'f'}
 	},
 	{
@@ -211,7 +211,7 @@ const levels = [
 		],
 		solution: {
 			message: 'An ocean of blue, please',
-			min_move: 7,
+			min_move: 8,
 			all: 'w'
 		}
 	},
@@ -240,7 +240,7 @@ const levels = [
 		],
 		solution: {
 			message: 'What could go green ?',
-			min_move: 17,
+			min_move: 18,
 			all: 'g'}
 	},
 
