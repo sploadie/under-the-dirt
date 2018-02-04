@@ -124,7 +124,7 @@ export default class GameContainer extends Component {
   }
 
   resetBoard() {
-    this.setState({ board: this.state.startBoard.slice(), solved: false })//, moves: [] })
+    this.setState({ board: this.state.startBoard.slice(), solved: false, moves: [] })
   }
 
   render() {
