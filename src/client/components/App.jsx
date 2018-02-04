@@ -14,7 +14,7 @@ export default class App extends Component {
       <Layout>
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route exact path="/Scoreboard" component={Scoreboard}/>
+          <Route exact path="/scoreboard" component={Scoreboard}/>
           <Route exact path="/game/:username" component={GameContainer}/>
           <Route component={NoMatch}/>
         </Switch>

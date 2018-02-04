@@ -9,10 +9,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.post('/scoreboard', (req, res) => {
-  if (req.body.level) {
+  if (req.body.level >= 0) {
     scoreboard[req.body.level] = scoreboard[req.body.level] || []
     scoreboard[req.body.level].push({ name: req.body.name, score: req.body.moves.length })
   }
+  console.log(scoreboard)
   res.send(JSON.stringify(scoreboard))
 });
 

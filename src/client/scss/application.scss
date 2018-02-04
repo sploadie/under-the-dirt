@@ -19,15 +19,15 @@ img {
 .game-container {
   width: 100%;
   height: 100%;
+}
 
-  .center-container {
-    width: 100%;
-    height: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.center-container {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .clue {
@@ -47,6 +47,10 @@ img {
   .ui.buttons {
     margin: 2px;
   }
+}
+
+.ui.center.aligned.cards {
+  justify-content: center;
 }
 
 .game-board {
