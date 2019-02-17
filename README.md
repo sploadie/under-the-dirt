@@ -29,4 +29,15 @@ You should be seeing the following screenshots.
 
 ## Screenshots [SPOILER ALERT]
 
-![](img/intro.png)
+### Home page
+
+![Home page](img/intro.png)
+
+### Easy Level
+
+![Easy level](img/easy.png)
+
+### Hard Level
+<p align="center">
+<img src="img/hard.png" align="center">
+</p>
